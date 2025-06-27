@@ -38,5 +38,4 @@ Admin Candidate Management:
     /candidates/:candidateId : PUT - Update an existing candidate.
     /candidates/:candidateId : DELETE - Delete an existing candidate from the list.
 
-
-   
+    Done   
