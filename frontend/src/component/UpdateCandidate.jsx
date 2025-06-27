@@ -47,7 +47,7 @@ const UpdateCandidate = ({ mode }) => {
         data.append("image", Image); // ✅ actual file object
 
         const response = await axios.post(
-          "http://localhost:3002/candidate",
+          "https://e-voting-mern.onrender.com/candidate",
           data,
           {
             headers: {
@@ -74,7 +74,7 @@ const UpdateCandidate = ({ mode }) => {
           data.append("image", Image);
         }
         const response = await axios.put(
-          `http://localhost:3002/candidate/${candidateId}`,
+          `https://e-voting-mern.onrender.com/candidate/${candidateId}`,
           data,
           {
             headers: {

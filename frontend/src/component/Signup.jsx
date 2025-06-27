@@ -28,16 +28,19 @@ const Signup = () => {
     console.log(roleValue);
 
     try {
-      const response = await axios.post("http://localhost:3002/signup", {
-        name: nameValue,
-        email: emailValue,
-        mobile: mobileValue,
-        adhaarCardNumber: adhaarCardNumberValue,
-        password: passwordValue,
-        address: addressValue,
-        age: ageValue,
-        role: roleValue,
-      });
+      const response = await axios.post(
+        "https://e-voting-mern.onrender.com/signup",
+        {
+          name: nameValue,
+          email: emailValue,
+          mobile: mobileValue,
+          adhaarCardNumber: adhaarCardNumberValue,
+          password: passwordValue,
+          address: addressValue,
+          age: ageValue,
+          role: roleValue,
+        }
+      );
       toast.success("signup Successfully");
       console.log("Signup successful:", response.data);
       navigate("/"); // Redirect to home page

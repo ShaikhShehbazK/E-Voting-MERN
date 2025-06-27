@@ -10,9 +10,12 @@ function Logout() {
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {
-        const response = await axios.post("http://localhost:3002/logout", {
-          withCredentials: true, // ✅ Sends session cookies
-        });
+        const response = await axios.post(
+          "https://e-voting-mern.onrender.com/logout",
+          {
+            withCredentials: true, // ✅ Sends session cookies
+          }
+        );
         console.log(response.data);
         toast.success("logout Successfully");
         setIsLoggedIn(false);

@@ -5,7 +5,7 @@ const VoteCount = () => {
   const [candidates, setCandidates] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3002/candidate/vote/count", {
+      .get("https://e-voting-mern.onrender.com/candidate/vote/count", {
         withCredentials: true, // ✅
       })
       .then((response) => {

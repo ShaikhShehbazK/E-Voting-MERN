@@ -10,7 +10,7 @@ const CandidateList = () => {
   const [candidateList, setCandidatesList] = useState([]);
 
   useEffect(() => {
-    const response = fetch("http://localhost:3002/candidate", {
+    const response = fetch("https://e-voting-mern.onrender.com/candidate", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

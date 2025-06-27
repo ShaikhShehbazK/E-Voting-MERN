@@ -19,10 +19,13 @@ export default function Login() {
     const adhaarCardNumberValue = adhaarCardNumber.current.value;
     const passwordValue = password.current.value;
     try {
-      const response = await axios.post("http://localhost:3002/login", {
-        adhaarCardNumber: adhaarCardNumberValue,
-        password: passwordValue,
-      });
+      const response = await axios.post(
+        "https://e-voting-mern.onrender.com/login",
+        {
+          adhaarCardNumber: adhaarCardNumberValue,
+          password: passwordValue,
+        }
+      );
       toast.success("login Successfully");
       setIsLoggedIn(true);
       console.log("login successful:", response.data);
