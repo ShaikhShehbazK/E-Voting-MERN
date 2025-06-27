@@ -20,7 +20,7 @@ export default function Login() {
     const passwordValue = password.current.value;
     try {
       const response = await axios.post(
-        "https://e-voting-mern.onrender.com/login",
+        "https://e-voting-mern-1.onrender.com/login",
         {
           adhaarCardNumber: adhaarCardNumberValue,
           password: passwordValue,

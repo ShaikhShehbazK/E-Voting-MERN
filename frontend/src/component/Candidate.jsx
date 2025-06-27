@@ -30,7 +30,7 @@ const Candidate = ({
     } else {
       try {
         const response = await axios.post(
-          `https://e-voting-mern.onrender.com/candidate/vote/${voteId}`
+          `https://e-voting-mern-1.onrender.com/candidate/vote/${voteId}`
         );
         console.log(response.data.message);
         toast.success(response.data.message);
@@ -49,7 +49,7 @@ const Candidate = ({
     console.log(Id2);
     try {
       const response = await axios.delete(
-        `https://e-voting-mern.onrender.com/candidate/${Id2}`
+        `https://e-voting-mern-1.onrender.com/candidate/${Id2}`
       );
       console.log(response.data.message);
       toast.success(response.data.message);
@@ -104,7 +104,7 @@ const Candidate = ({
               {image ? (
                 <img
                   className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-                  src={`https://e-voting-mern.onrender.com/uploads/${image}`}
+                  src={`https://e-voting-mern-1.onrender.com/uploads/${image}`}
                   alt=""
                 />
               ) : (

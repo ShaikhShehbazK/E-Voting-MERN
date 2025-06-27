@@ -16,7 +16,7 @@ const Profile = () => {
     try {
       console.log(currentPasswordValue, newPasswordValue);
       const response = await axios.post(
-        "https://e-voting-mern.onrender.com/profile/password",
+        "https://e-voting-mern-1.onrender.com/profile/password",
         {
           currentPassword: currentPasswordValue,
           newPassword: newPasswordValue,
@@ -40,7 +40,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("https://e-voting-mern.onrender.com/profile")
+      .get("https://e-voting-mern-1.onrender.com/profile")
       .then((response) => {
         const userData = response.data.userData;
         setName(userData.name);

@@ -11,7 +11,7 @@ function Logout() {
     const checkLoginStatus = async () => {
       try {
         const response = await axios.post(
-          "https://e-voting-mern.onrender.com/logout",
+          "https://e-voting-mern-1.onrender.com/logout",
           {
             withCredentials: true, // ✅ Sends session cookies
           }

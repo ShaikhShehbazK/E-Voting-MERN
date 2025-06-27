@@ -29,7 +29,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://e-voting-mern.onrender.com/signup",
+        "https://e-voting-mern-1.onrender.com/signup",
         {
           name: nameValue,
           email: emailValue,
