@@ -2,45 +2,12 @@ const Candidate = require("../models/candidate");
 const Voter = require("../models/user");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
-
-//multer
-const multer = require("multer");
 const path = require("path");
-const randomString = (length) => {
-  let result = "";
-  const characters = "abcdefghijklmnopqrstuvwxyz";
-  const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
+const multer = require("multer");
+const { storage } = require("../cloudinaryConfig"); // ✅ import your Cloudinary setup
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/"); // Folder to save images
-  },
-  filename: (req, file, cb) => {
-    const fileName = randomString(10) + "-" + file.originalname;
-    cb(null, fileName);
-  },
-});
-
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/png" ||
-    file.mimetype === "image/jpg" ||
-    file.mimetype === "image/jpeg" ||
-    file.mimetype === "image/webp"
-  ) {
-    cb(null, true); // Accept the file
-  } else {
-    cb(null, false); // Reject the file
-  }
-};
-
-const upload = multer({ storage, fileFilter });
-//multer done
+const upload = multer({ storage }); // no fileFilter needed with cloudinary
+//multer configuration done
 
 const checkUserRole = async (userId) => {
   try {
