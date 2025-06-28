@@ -111,7 +111,7 @@ app.use(
     store,
     cookie: {
       httpOnly: true,
-      secure: true, // Set to true in production (HTTPS required)
+      secure: false, // Set to true in production (HTTPS required)
       sameSite: "none", // ✅ Allows cross-origin cookies (Netlify → Render)
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     },
