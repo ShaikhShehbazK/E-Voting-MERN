@@ -56,39 +56,39 @@ const store = new MongoDBStore({
   collection: "sessions",
 });
 
-const randomString = (length) => {
-  let result = "";
-  const characters = "abcdefghijklmnopqrstuvwxyz";
-  const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
+// const randomString = (length) => {
+//   let result = "";
+//   const characters = "abcdefghijklmnopqrstuvwxyz";
+//   const charactersLength = characters.length;
+//   for (let i = 0; i < length; i++) {
+//     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+//   }
+//   return result;
+// };
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/"); // Folder to save images
-  },
-  filename: (req, file, cb) => {
-    const fileName = randomString(10) + "-" + file.originalname;
-    cb(null, fileName);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads/"); // Folder to save images
+//   },
+//   filename: (req, file, cb) => {
+//     const fileName = randomString(10) + "-" + file.originalname;
+//     cb(null, fileName);
+//   },
+// });
 
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/png" ||
-    file.mimetype === "image/jpg" ||
-    file.mimetype === "image/jpeg"
-  ) {
-    cb(null, true); // Accept the file
-  } else {
-    cb(null, false); // Reject the file
-  }
-};
+// const fileFilter = (req, file, cb) => {
+//   if (
+//     file.mimetype === "image/png" ||
+//     file.mimetype === "image/jpg" ||
+//     file.mimetype === "image/jpeg"
+//   ) {
+//     cb(null, true); // Accept the file
+//   } else {
+//     cb(null, false); // Reject the file
+//   }
+// };
 
-const upload = multer({ storage, fileFilter });
+// const upload = multer({ storage, fileFilter });
 
 // const multerOptions = {
 //   storage,
@@ -111,7 +111,7 @@ app.use(
     store,
     cookie: {
       httpOnly: true,
-      secure: false, // Set to true in production (HTTPS required)
+      secure: true, // Set to true in production (HTTPS required)
       sameSite: "none", // ✅ Allows cross-origin cookies (Netlify → Render)
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     },
