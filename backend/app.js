@@ -16,15 +16,34 @@ const authRouter = require("./routes/authRoute");
 
 const app = express();
 // app.use(cors());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://frolicking-halva-55dcef.netlify.app/",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://admirable-e-voting-61fab8.netlify.app/",
-    ], // ✅ your frontend URL
-    credentials: true, // ✅ required for cookies
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
+
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://admirable-e-voting-61fab8.netlify.app/",
+//     ], // ✅ your frontend URL
+//     credentials: true, // ✅ required for cookies
+//   })
+// );
 
 app.use(express.json());
 app.use(express.urlencoded());
