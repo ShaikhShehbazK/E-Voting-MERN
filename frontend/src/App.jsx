@@ -61,7 +61,7 @@ function App() {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:3002/user", {
+        .get("https://e-voting-mern-1.onrender.com", {
           withCredentials: true, // ✅ Sends session cookies
         })
         .then((response) => {

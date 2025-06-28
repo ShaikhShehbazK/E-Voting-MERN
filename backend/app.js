@@ -18,7 +18,10 @@ const app = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: "http://localhost:5173", // ✅ your frontend URL
+    origin: [
+      "http://localhost:5173",
+      "https://bucolic-caramel-955597.netlify.app/",
+    ], // ✅ your frontend URL
     credentials: true, // ✅ required for cookies
   })
 );
