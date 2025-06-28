@@ -18,7 +18,7 @@ const app = express();
 // app.use(cors());
 
 const allowedOrigins = [
-  "https://shehbaz-e-voting-website.netlify.app",
+  "https://helpful-souffle-3ab74a.netlify.app",
   "http://localhost:5173",
 ];
 
