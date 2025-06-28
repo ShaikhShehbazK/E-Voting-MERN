@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://bucolic-caramel-955597.netlify.app/",
+      "https://admirable-e-voting-61fab8.netlify.app/",
     ], // ✅ your frontend URL
     credentials: true, // ✅ required for cookies
   })
