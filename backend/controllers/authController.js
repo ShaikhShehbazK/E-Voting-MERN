@@ -92,7 +92,7 @@ exports.postLogin = async (req, res, next) => {
   const password = req.body.password;
   try {
     const voter = await Voter.findOne({ adhaarCardNumber });
-
+    console.log("Printing Voter Object", voter);
     if (!voter) {
       req.session.destroy(() => {});
       return res
