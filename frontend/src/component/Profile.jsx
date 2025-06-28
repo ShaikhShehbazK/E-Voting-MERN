@@ -40,7 +40,9 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("https://e-voting-mern-1.onrender.com/profile")
+      .get("https://e-voting-mern-1.onrender.com/profile", {
+        withCredentials: true,
+      })
       .then((response) => {
         const userData = response.data.userData;
         setName(userData.name);

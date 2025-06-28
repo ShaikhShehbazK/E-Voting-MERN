@@ -15,6 +15,7 @@ const CandidateList = () => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include", // ✅ this is the fetch equivalent of Axios' withCredentials
     })
       .then((res) => res.json())
       .then((data) => {

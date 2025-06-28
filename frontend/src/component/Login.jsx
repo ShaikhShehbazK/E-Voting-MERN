@@ -24,13 +24,16 @@ export default function Login() {
         {
           adhaarCardNumber: adhaarCardNumberValue,
           password: passwordValue,
+        },
+        {
+          withCredentials: true,
         }
       );
       toast.success("login Successfully");
       setIsLoggedIn(true);
       console.log("login successful:", response.data);
       navigate("/"); // Redirect to home page
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.error("login error:", error);
       if (error.response.data.message) {

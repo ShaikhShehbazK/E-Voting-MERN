@@ -30,7 +30,10 @@ const Candidate = ({
     } else {
       try {
         const response = await axios.post(
-          `https://e-voting-mern-1.onrender.com/candidate/vote/${voteId}`
+          `https://e-voting-mern-1.onrender.com/candidate/vote/${voteId}`,
+          {
+            withCredentials: true,
+          }
         );
         console.log(response.data.message);
         toast.success(response.data.message);

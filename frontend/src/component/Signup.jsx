@@ -39,6 +39,9 @@ const Signup = () => {
           address: addressValue,
           age: ageValue,
           role: roleValue,
+        },
+        {
+          withCredentials: true,
         }
       );
       toast.success("signup Successfully");
